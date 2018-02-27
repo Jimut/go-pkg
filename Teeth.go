@@ -2,7 +2,6 @@ package Alligator
 
 import (
 	"encoding/json"
-	"io/ioutil"
 )
 
 type Teeth struct {
@@ -14,7 +13,7 @@ func GetTeeth() string {
 }
 
 func GetMeta() map[string]int {
-	buff, err := ioutil.ReadFile("data/meta.json")
+	buff, err := Asset("data/meta.json")
 	check(err)
 
 	data := make(map[string]int)
